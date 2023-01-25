@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pais</title>
+</head>
+<body>
+    <H1>Sistema de Paises</H1>
+
+    Vivendo em: <input type="text" name="pais" id="vivePais">
+    <input type="button" value="Verificar" onclick="validar()">
+
+    <div id="resposta"></div>
+
+    <script>
+        function validar() {
+            var vivePais = document.querySelector('#vivePais');
+            var resposta = document.querySelector('#resposta');
+            var vive = String(vivePais.value);
+
+            resposta.innerHTML = `<p>Você é de(o) <strong>${vive}</strong></p>`
+
+            if (vive != 'Brasil') {
+                resposta.innerHTML += `<p>Você é estrangeiro!</p>`
+            } else {
+                resposta.innerHTML += `<p>Você é Brasileiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
