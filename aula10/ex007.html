@@ -4,47 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos DOM</title>
+    <title>Somando números</title>
     <style>
-        #area {
-            font: normal 20pt Arial;
-            background: green;
-            color: white;
-            width: 200px;
-            height: 200px;
-            line-height: 200px;
-            text-align: center;
+        body {
+            font: normal 18px Arial;
         }
-        #area:hover {
-            cursor: pointer;
+        input {
+            font: normal 18px Arial;
+            width: 80px;
+        }
+        #resultado {
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    
-    <div id="area">
-        Interaja...
-    </div>
+    <h1>Somando valores</h1>
 
-    <script>
-        var a = document.getElementById('area')
-        a.addEventListener('click', clicar)
-        a.addEventListener('mouseenter', entrar)
-        a.addEventListener('mouseout', sair)
+    <input type="number" name="numero1" id="numero1"> +
+    <input type="number" name="numero2" id="numero2">
+    <input type="button" value="Somar" id="somar()" onclick="somar()">
+    <div id="resultado">Resultado</div>
 
-        function clicar() {
-            a.innerText = 'Clicou!'
-            a.style.background = 'red'
-        }
-        function entrar() {
-            a.innerText = 'Entrou!'
-        }
-        function sair() {
-            a.innerText = 'Saiu!'
-            a.style.background = 'green'
-        }
-    
+    <script>        
+    function somar() {
+        var num1 = document.getElementById('numero1')
+        var num2 = document.querySelector('#numero2')
+        var resultado = document.getElementById('resultado')
+
+        var n1 = Number(num1.value)
+        var n2 = Number(num2.value)
+        var soma = n1 + n2
+
+        resultado.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strond>${soma}</strong>`
+
+    }
     </script>
     
 </body>
