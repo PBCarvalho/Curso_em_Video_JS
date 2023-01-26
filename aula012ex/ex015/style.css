@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(70, 142, 236);
+    font: normal 15px Arial;
+}
+
+header, footer {
+    text-align: center;
+    color:#fff
+}
+
+section {
+    width: 500px;
+    margin: auto;
+
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.363);
+}
+
+footer {
+    margin-top: 10px;
+    font-style: italic;
+}
