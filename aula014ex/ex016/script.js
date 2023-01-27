@@ -1,21 +1,34 @@
 function contar() {
-    let inicio = document.querySelector('#numInicio').value;
-    let fim = document.getElementById('numFim').value;
-    let passos = document.getElementById('numPassos').value;
-    let resposta = document.querySelector('#resposta');
+    let inicio = document.querySelector('#numInicio').value
+    let fim = document.getElementById('numFim').value
+    let passo = document.getElementById('numPasso').value
+    let resposta = document.querySelector('#resposta')
 
 
-    if (inicio == '') {
-        resposta.innerHTML = 'Impossível contar!' 
-    } else if (passos == 0) {
-        alert('Passo inválido! Considerando PASSO 1');
+    if (inicio.length == 0 || fim.length == 0) {
+        resposta.innerHTML = 'Impossível contar!'
+        alert('[ERRO] Faltam dados!')
     } else {
-        let ini = Number(inicio)
-        let fim = Number(fim)
-        let pas = Number(passos)
+        resposta.innerHTML = 'Contando: <br>'
 
-        for(let x = ini; x <= fim; x += pas) {
+        let i = Number(inicio)
+        let f = Number(fim)
+        let p = Number(passo)
 
+        if (p <= 0) {
+            alert('Passo inválido! Considerando PASSO 1')
+            p = 1
         }
-    }    
+
+        if (i < f) {
+            for(let c = i; c <= f; c += p) {
+                resposta.innerHTML += ` ${c} \u{1F449}`
+            }
+        } else {
+            for(let c = i; c >= f; c -= p) {
+                resposta.innerHTML += ` ${c} \u{1F449}`
+            }
+        }
+        resposta.innerHTML += `\u{1F3C1}`
+    }
 }
